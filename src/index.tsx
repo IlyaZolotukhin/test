@@ -1,15 +1,41 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ParamEditor from "./ParamEditor";
+
+let params=
+    [
+        {
+            "id": 1,
+            "name": "Назначение"
+        },
+        {
+            "id": 2,
+            "name": "Длина"
+        }
+    ]
+let model=
+{
+    "paramValues": [
+    {
+        "paramId": 1,
+        "value": "повседневное"
+    },
+    {
+        "paramId": 2,
+        "value": "макси"
+    }
+]
+}
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+      <ParamEditor params={params} model={model} />
   </React.StrictMode>
 );
 
